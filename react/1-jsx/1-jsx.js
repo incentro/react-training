@@ -33,3 +33,7 @@ setInterval(function() {
     document.body
   );
 }, 500);
+
+// OBJECTIVE:
+// - Build a TODO list app withouth any logic
+// - Use pure JSX to build a DOM tree out of a single component

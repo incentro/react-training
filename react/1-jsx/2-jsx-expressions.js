@@ -35,3 +35,7 @@ var HelloWorld = React.createClass({
 });
 
 ReactDOM.render(<HelloWorld date={new Date()} />, document.body);
+
+// OBJECTIVE
+// - Add a default input value to the list
+// - Render the todolist items with a map function

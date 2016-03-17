@@ -153,3 +153,14 @@ ReactDOM.render(
   <CommentBox url="/api/comments" pollInterval={2000} />,
   document.body
 );
+
+// OBJECTIVE
+// - Take a look at the react docs => http://facebook.github.io/react/docs/getting-started.html
+// - Add a jQuery plugin to the page on the right lifeCylce hook of a todo list item
+// - Rumble the item as soon as it enters the list => https://jackrugile.com/jrumble/
+
+// <script src="https://npmcdn.com/jrumble@1.3.0"></script>
+// Initialise rumble
+// $('body').jrumble();
+// Start rumble on element
+// $('body').trigger('startRumble');

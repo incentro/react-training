@@ -29,14 +29,15 @@ var Avatar = React.createClass({
 var SearchBar = React.createClass({
 
   // Create a function that catches the value of the input and passes it back up to where the state needs to be changed
-  handleChange: function() {
+  handleChange: function(event) {
     this.props.onUserInput(
-      this.refs.searchbar.value
+      event.target.value
     );
   },
+
   render: function() {
     return (
-      <input type="text" value={this.props.pagename}  ref="searchbar" onChange={this.handleChange}/>
+      <input type="text" value={this.props.pagename} onChange={this.handleChange}/>
     );
   }
 });
@@ -64,3 +65,8 @@ var PageLink = React.createClass({
 
 
 ReactDOM.render(<Avatar/>, document.body);
+
+// OBJECTIVE
+// - Split the application into multiple reusable components
+// - Pass data down using props
+// - Pass data up using functions

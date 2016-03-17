@@ -23,8 +23,11 @@ var LikeButton = React.createClass({
 });
 
 // State should contain data that a component's event handlers may change to trigger a UI update
-
 ReactDOM.render(
   <LikeButton />,
   document.body
 );
+
+// OBJECTIVE
+// - Move the variables inside the state of the component
+// - Use events to add items to the list
