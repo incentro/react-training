@@ -19,7 +19,7 @@ const TodoReducer  =  (state = INITIAL_STATE , action ) => {
 					... state.todos,
 					{
 						name : action.payload,
-						id : state.todos.length,
+						id : state.todos[state.todos.length-1].id + 1,
 						done : false
 					}
 				]

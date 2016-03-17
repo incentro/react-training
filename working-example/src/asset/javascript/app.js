@@ -17,6 +17,8 @@ class App extends React.Component {
 
 		this.resetState = this.resetState.bind(this);
 		this.deleteTodo = this.deleteTodo.bind(this);
+		this.toggleTodo = this.toggleTodo.bind(this);
+
 		TodoStore.subscribe(this.resetState);
 	}
 	addTodo(value){
@@ -31,6 +33,12 @@ class App extends React.Component {
 			payload : value
 		});
 	}
+	toggleTodo(value){
+		TodoStore.dispatch({
+			type : 'TOGGLE_TODO',
+			payload : value
+		});
+	}
 	resetState(){
 		let {todos} = TodoStore.getState();
 		this.setState({
@@ -42,7 +50,7 @@ class App extends React.Component {
 			<div>
 				<h1>Hoi weweeeeere</h1>
 				<Add addTodo={this.addTodo}/>
-				<Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
+				<Todos todos={this.state.todos} toggleTodo={this.toggleTodo} deleteTodo={this.deleteTodo} />
 			</div>
 		);
 	}
