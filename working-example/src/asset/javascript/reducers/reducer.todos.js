@@ -3,7 +3,7 @@ import {createStore} from 'redux';
 const INITIAL_STATE = {
 	todos: [
 		{
-			name : "To do nummer 1",
+			name : 'To do nummer 1',
 			id : 0,
 			done : false
 		}
@@ -24,17 +24,20 @@ const TodoReducer  =  (state = INITIAL_STATE , action ) => {
 					}
 				]
 			};
-		break;
 		case 'TOGGLE_TODO':
 			return {
 				...state,
 				todos: state.todos.map(todo => todo.id === action.payload ? {...todo, done: !todo.done} : todo)
 			};
-		break;
+		case 'DELETE_TODO':
+			return {
+				...state,
+				todos: state.todos.filter(todo => todo.id !== action.payload)
+			};
 		default:
 			return state;
 	}
-}
+};
 
 const TodoStore = createStore(TodoReducer);
 

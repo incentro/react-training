@@ -10,7 +10,7 @@ class Todos extends React.Component {
 			<ul>
 				{
 					this.props.todos.map( (todo, index) => {
-						return <Todo key={index} todo={todo} />
+						return <Todo key={index} todo={todo} deleteTodo={this.props.deleteTodo} />
 					})
 				}
 			</ul>

@@ -16,12 +16,18 @@ class App extends React.Component {
 		this.addTodo = this.addTodo.bind();
 
 		this.resetState = this.resetState.bind(this);
+		this.deleteTodo = this.deleteTodo.bind(this);
 		TodoStore.subscribe(this.resetState);
-
 	}
 	addTodo(value){
 		TodoStore.dispatch({
 			type : 'ADD_TODO',
+			payload : value
+		});
+	}
+	deleteTodo(value){
+		TodoStore.dispatch({
+			type : 'DELETE_TODO',
 			payload : value
 		});
 	}
@@ -36,7 +42,7 @@ class App extends React.Component {
 			<div>
 				<h1>Hoi weweeeeere</h1>
 				<Add addTodo={this.addTodo}/>
-				<Todos todos={this.state.todos} />
+				<Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
 			</div>
 		);
 	}
