@@ -7,14 +7,14 @@ const INITIAL_STATE = {
 			id : 0,
 			done : false
 		}
-	]	
+	]
 };
 
-const TodoReducer  =  (state = INITIAL_STATE , action ) => { 
+const TodoReducer  =  (state = INITIAL_STATE , action ) => {
 	switch(action.type){
 		case 'ADD_TODO':
 			return {
-				... state, 
+				... state,
 				todos : [
 					... state.todos,
 					{
@@ -23,21 +23,13 @@ const TodoReducer  =  (state = INITIAL_STATE , action ) => {
 						done : false
 					}
 				]
-			}
+			};
 		break;
 		case 'TOGGLE_TODO':
 			return {
-				... state,
-				state.todos.map(todo => {
-					if(todo.id === action.payload){
-						return {
-							... todo , done: !todo.done 
-						}
-					}
-					return todo
-				})
-			}
-
+				...state,
+				todos: state.todos.map(todo => todo.id === action.payload ? {...todo, done: !todo.done} : todo)
+			};
 		break;
 		default:
 			return state;

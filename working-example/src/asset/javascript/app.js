@@ -11,8 +11,6 @@ class App extends React.Component {
 	constructor(){
 		super();
 
-		console.log(TodoStore.getState());
-		
 		this.state =  TodoStore.getState();
 
 		this.addTodo = this.addTodo.bind();
@@ -28,13 +26,9 @@ class App extends React.Component {
 		});
 	}
 	resetState(){
-		console.log(TodoStore.getState());
 		let {todos} = TodoStore.getState();
-
-		console.log(todos);
-
 		this.setState({
-			todos 
+			todos
 		});
 	}
 	render() {

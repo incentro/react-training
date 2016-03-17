@@ -5,6 +5,8 @@ import TodoStore from '../../reducers/reducer.todos.js';
 class Todo extends React.Component {
 	constructor(){
 		super();
+
+		this.state =  TodoStore.getState();
 		this.handleClick = this.handleClick.bind(this);
 	}
 	handleClick(){
@@ -12,9 +14,10 @@ class Todo extends React.Component {
 			type : 'TOGGLE_TODO',
 			payload : this.props.todo.id
 		});
+		this.setState(TodoStore.getState());
 	}
 	render() {
-		return <li onClick={this.handleClick}>{this.props.todo.id +' '+ this.props.todo.name}</li>;
+		return <li style={this.state.todos[this.props.todo.id].done ? {textDecoration: 'line-through'} : null } onClick={this.handleClick}>{this.props.todo.id +' '+ this.props.todo.name}</li>;
 	}
 }
 
