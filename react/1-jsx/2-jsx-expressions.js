@@ -34,7 +34,7 @@ var HelloWorld = React.createClass({
   }
 });
 
-ReactDOM.render(<HelloWorld date={new Date()} />, document.body);
+ReactDOM.render(<HelloWorld />, document.body);
 
 // OBJECTIVE
 // - Add a default input value to the list
